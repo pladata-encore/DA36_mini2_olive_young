@@ -53,7 +53,20 @@
 26. child_max_price: 해당 제품의 변형 중 가장 높은 가격.
 27. child_min_price: 해당 제품의 변형 중 가장 낮은 가격.
 
-**Reviews Data (리뷰 데이터)**
+**🎈 선정 Product Data (제품 데이터)**
+1. product_name: 제품의 전체 이름.
+2. brand_name: 제품 브랜드의 전체 이름.
+3. loves_count: 이 제품을 좋아요로 표시한 사람들의 수.
+4. rating: 사용자 리뷰를 바탕으로 한 제품의 평균 평점.
+5. reviews: 해당 제품에 대한 사용자 리뷰 수.
+6. variation_desc: 변형 유형에 대한 설명 (예: 피부 톤을 고려한 색상 등).
+7. ingredients: 제품에 포함된 성분 목록. 변형이 있는 경우 각 변형에 대한 성분 리스트가 따로 있을 수 있음.
+8. price_usd: 제품의 정가 (미국 달러 기준).
+9. highlights: 제품의 특징이나 주요 속성에 대한 태그 목록 (예: "비건", "매트 피니시").
+10. primary_category: 제품이 속한 첫 번째 카테고리.
+11. secondary_category: 제품이 속한 두 번째 카테고리.
+
+ **Reviews Data (리뷰 데이터)**
 1. author_id: 리뷰 작성자의 고유 식별자.
 2. rating: 리뷰 작성자가 부여한 제품의 평점 (1~5).
 3. is_recommended: 리뷰 작성자가 이 제품을 추천하는지 여부 (1: 추천, 0: 추천하지 않음).
@@ -69,4 +82,6 @@
 13. skin_type: 리뷰 작성자의 피부 타입 (예: combination, oily 등).
 14. hair_color: 리뷰 작성자의 머리 색깔 (예: brown, auburn 등).
 15. product_id: 리뷰가 작성된 제품의 고유 ID.
+
+
 
