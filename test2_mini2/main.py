@@ -4,6 +4,10 @@ import numpy as np
 import functions as fun
 from PIL import Image
 from menu1 import *
+from menu2 import *
+from menu3 import *
+from menu4 import *
+from menu5 import *
 
 # fun.data_load()
 
