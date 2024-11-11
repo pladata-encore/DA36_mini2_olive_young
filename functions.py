@@ -1,7 +1,6 @@
 import pandas as pd
 import streamlit as st
 import numpy as np
-import matplotlib.pyplot as plt
 from sklearn.feature_extraction.text import CountVectorizer
 from sklearn.metrics.pairwise import cosine_similarity
 from sklearn.model_selection import train_test_split
@@ -13,7 +12,6 @@ product_info = None
 sephora_df = None
 product_review_rate_df = None
 
-@st.cache_data
 def data_load():
 
     global product_info, sephora_df
@@ -84,7 +82,6 @@ def load_data():
 #
 #     return sephora_df
 #
-# @st.cache_data
 def pickle_load():
 
     global sephora_df
@@ -180,7 +177,8 @@ def top3_love_count():
         index=None,
         placeholder="선택해주세요!"
     )
-    category_and_love_df = sephora_df[['product_name_x', 'secondary_category', 'loves_count', 'highlights']]
+    category_and_love_df = sephora_df[['secondary_category', 'loves_count', 'highlights']]
+    # category_and_love_df = sephora_df[['product_name_x', 'secondary_category', 'loves_count', 'highlights']]
 
 
     if cat:
