@@ -89,8 +89,25 @@
 
 <br>
 
-### 🎞️ 유튜브 시연영상
-[<img alt="OliveYoung의 시연영상" src="&quot;C://Users//playdata2//Pictures//Screenshots//youtude.png&quot;"/>](https://youtu.be/fcDj0I0Eeeg)
+### 🐧 회귀 추천 시스템
+1. **데이터 준비**
+- 필요한 변수만 선택 후 데이터 준비
+- 훈련 데이터, 테스트 데이터 분리
+2. **CatBoost Features 선택**
+- 고려해야할 범주형 CatBoost features 선택
+3. **CatBoost 모델**
+- 파라미터 설정 / 손실함수, 평가지료 = RMSE
+- 모델 훈련
+4. **데이터 categorize** 
+- 사용자가 선택 할 화장품 카페고리, 브랜드에 따라 데이터 categorize
+5. **사용자 입력값**
+- 모델 예측
+6. **평점 예측치를 기반으로 제품 추천**
+- 평점 예측치를 기반으로 제품의 제품명 및 평점 출력
+
+<br>
+
+### 🎞️ Olive Young 유튜브 시연영상
 
 
 
