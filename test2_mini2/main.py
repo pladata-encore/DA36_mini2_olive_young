@@ -2,6 +2,12 @@ import streamlit as st
 import pandas as pd
 import numpy as np
 from PIL import Image
+from menu1 import *
+from menu2 import *
+from menu3 import *
+from menu4 import *
+from menu5 import *
+from intro import *
 
 import os
 
