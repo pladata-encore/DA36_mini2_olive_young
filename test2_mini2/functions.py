@@ -79,22 +79,22 @@ def load_data():
     sephora_df.reset_index(drop=True, inplace=True)
     return sephora_df
 
-    with open("data.pickle", "wb") as fw:
-        pickle.dump(sephora_df, fw)
+    # with open("data.pickle", "wb") as fw:
+    #     pickle.dump(sephora_df, fw)
 
     return sephora_df
 #
 # @st.cache_data
-# def pickle_load():
-#
-#     global product_info, sephora_df
-#
-#     with open("data/sephora_df.pickle", "rb") as fr:
-#         sephora_df = pickle.load(fr)
-#         # print('피클 로드 완료')
-#         # print(sephora_df.columns)
-#
-#         return sephora_df
+def pickle_load():
+
+    global product_info, sephora_df
+
+    with open("data/sephora_df.pickle", "rb") as fr:
+        sephora_df = pickle.load(fr)
+        # print('피클 로드 완료')
+        # print(sephora_df.columns)
+
+        return sephora_df
 
 #----------------------------------------------------------------------------------------------------#
 
@@ -103,7 +103,7 @@ def load_data():
 #----------------------------------------------------------------------------------------------------#
 
 def ingre_predict(date_set, user_input):
-
+    pickle_load()
     sampled_prod_info = pd.DataFrame({
         'prod_name': date_set['product_name_x'],
         'ingredients': date_set['ingredients'] ,
@@ -132,6 +132,7 @@ def ingre_predict(date_set, user_input):
     return predicted_item
 
 def ingre_predict2(date_set, user_input):
+    pickle_load()
     from sklearn.feature_extraction.text import TfidfVectorizer
 
     sampled_prod_info = pd.DataFrame({
@@ -173,7 +174,7 @@ def ingre_predict2(date_set, user_input):
 
 def top3_love_count():
 
-    # pickle_load()
+    pickle_load()
 
     cat = st.selectbox(
         '카테고리를 입력하세요',
