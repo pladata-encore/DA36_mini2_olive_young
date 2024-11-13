@@ -79,10 +79,10 @@ def load_data():
     sephora_df.reset_index(drop=True, inplace=True)
     return sephora_df
 
-#     with open("data.pickle", "wb") as fw:
-#         pickle.dump(sephora_df, fw)
-#
-#     return sephora_df
+    with open("data.pickle", "wb") as fw:
+        pickle.dump(sephora_df, fw)
+
+    return sephora_df
 #
 # @st.cache_data
 def pickle_load():
@@ -287,33 +287,33 @@ def review_and_avg_rate():
 #----------------------------------------------------------------------------------------------------#
 
 def regression_recommend(sephora_df, product_name_x, brand_name, secondary_category, skin_type):
-    # sephora_df = sephora_df[['product_name_x', 'brand_name_x', 'skin_type', 'secondary_category', 'rating']]
-    #
-    # X = sephora_df.drop('rating', axis=1)
-    # y = sephora_df['rating']
-    #
-    # X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=0)
-    #
-    # cat_features = ['product_name_x', 'brand_name_x', 'secondary_category', 'skin_type']
-    #
-    # X_train_pool = Pool(X_train, y_train, cat_features=cat_features)
-    # X_test_pool = Pool(X_test, y_test, cat_features=cat_features)
-    #
-    # cb_reg = CatBoostRegressor(
-    #     n_estimators=50,
-    #     depth=5,
-    #     learning_rate=0.05,
-    #     loss_function='RMSE',
-    #     eval_metric='RMSE'
-    # )
-    #
-    # cb_reg.fit(X_train_pool, eval_set=X_test_pool, verbose=100)
+    sephora_df = sephora_df[['product_name_x', 'brand_name_x', 'skin_type', 'secondary_category', 'rating']]
+
+    X = sephora_df.drop('rating', axis=1)
+    y = sephora_df['rating']
+
+    X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=0)
+
+    cat_features = ['product_name_x', 'brand_name_x', 'secondary_category', 'skin_type']
+
+    X_train_pool = Pool(X_train, y_train, cat_features=cat_features)
+    X_test_pool = Pool(X_test, y_test, cat_features=cat_features)
+
+    cb_reg = CatBoostRegressor(
+        n_estimators=50,
+        depth=5,
+        learning_rate=0.05,
+        loss_function='RMSE',
+        eval_metric='RMSE'
+    )
+
+    cb_reg.fit(X_train_pool, eval_set=X_test_pool, verbose=100)
 
     # with open("cb_reg.pickle", "wb") as fw:
     #     pickle.dump(cb_reg, fw)
-    with open("data/cb_reg.pickle", "rb") as fr:
-        cb_reg = pickle.load(fr)
-        return cb_reg
+    # with open("data/cb_reg.pickle", "rb") as fr:
+    #     cb_reg = pickle.load(fr)
+    #     return cb_reg
 
 
     user_category = secondary_category
