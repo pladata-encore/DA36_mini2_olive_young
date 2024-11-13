@@ -79,8 +79,8 @@ def load_data():
     sephora_df.reset_index(drop=True, inplace=True)
     return sephora_df
 
-    with open("data.pickle", "wb") as fw:
-        pickle.dump(sephora_df, fw)
+    # with open("data.pickle", "wb") as fw:
+    #     pickle.dump(sephora_df, fw)
 
     return sephora_df
 #
