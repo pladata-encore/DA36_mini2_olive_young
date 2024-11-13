@@ -89,7 +89,7 @@ def pickle_load():
 
     global product_info, sephora_df
 
-    with open("./data/sephora_df.pickle", "rb") as fr:
+    with open("data/sephora_df.pickle", "rb") as fr:
         sephora_df = pickle.load(fr)
         # print('피클 로드 완료')
         # print(sephora_df.columns)

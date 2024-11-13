@@ -4,6 +4,7 @@ import numpy as np
 from pyparsing import empty
 from tkinter.tix import COLUMN
 
+from functions import *
 import functions as fun
 from PIL import Image
 
