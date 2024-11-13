@@ -45,44 +45,44 @@ def data_load():
     sephora_df = seph_df.dropna()
     sephora_df = sephora_df.sample(n=100000, random_state=0)
     sephora_df.reset_index(drop=True, inplace=True)
-
-def load_data():
-
-    global product_info, sephora_df
-
-    product_info = pd.read_csv('./data/product_info.csv', encoding='latin1')
-    product_info['rating_average'] = product_info['rating']
-    product_info[['rating', 'rating_average']]
-    product_info = product_info.drop('rating', axis=1)
-    product_info['rating_average']
-
-    review_1 = pd.read_csv('./data/reviews_0-250.csv', dtype=str)
-    review_2 = pd.read_csv('./data/reviews_250-500.csv', dtype=str)
-    review_3 = pd.read_csv('./data/reviews_500-750.csv', dtype=str)
-    review_4 = pd.read_csv('./data/reviews_750-1250.csv', dtype=str)
-    review_5 = pd.read_csv('./data/reviews_1250-end.csv', dtype=str)
-
-    review_df = pd.concat([review_1, review_2, review_3, review_4, review_5])
-    review_df['product_name'].value_counts()
-    df = pd.merge(review_df, product_info, how='outer', on='product_id')
-    sk_df = df[df['primary_category'] == 'Skincare']
-    seph_df = sk_df[['author_id', 'rating', 'rating_average', 'is_recommended', 'helpfulness',
-                     'total_feedback_count', 'total_neg_feedback_count',
-                     'total_pos_feedback_count', 'submission_time', 'review_text',
-                     'review_title', 'skin_tone', 'eye_color', 'skin_type', 'hair_color',
-                     'product_name_x', 'brand_name_x', 'price_usd_x',
-                     'loves_count', 'reviews',
-                     'ingredients', 'highlights', 'primary_category',
-                     'secondary_category']]
-    sephora_df = seph_df.dropna()
-    sephora_df = sephora_df.sample(n=100000, random_state=0)
-    sephora_df.reset_index(drop=True, inplace=True)
-    return sephora_df
+#
+# def load_data():
+#
+#     global product_info, sephora_df
+#
+#     product_info = pd.read_csv('./data/product_info.csv', encoding='latin1')
+#     product_info['rating_average'] = product_info['rating']
+#     product_info[['rating', 'rating_average']]
+#     product_info = product_info.drop('rating', axis=1)
+#     product_info['rating_average']
+#
+#     review_1 = pd.read_csv('./data/reviews_0-250.csv', dtype=str)
+#     review_2 = pd.read_csv('./data/reviews_250-500.csv', dtype=str)
+#     review_3 = pd.read_csv('./data/reviews_500-750.csv', dtype=str)
+#     review_4 = pd.read_csv('./data/reviews_750-1250.csv', dtype=str)
+#     review_5 = pd.read_csv('./data/reviews_1250-end.csv', dtype=str)
+#
+#     review_df = pd.concat([review_1, review_2, review_3, review_4, review_5])
+#     review_df['product_name'].value_counts()
+#     df = pd.merge(review_df, product_info, how='outer', on='product_id')
+#     sk_df = df[df['primary_category'] == 'Skincare']
+#     seph_df = sk_df[['author_id', 'rating', 'rating_average', 'is_recommended', 'helpfulness',
+#                      'total_feedback_count', 'total_neg_feedback_count',
+#                      'total_pos_feedback_count', 'submission_time', 'review_text',
+#                      'review_title', 'skin_tone', 'eye_color', 'skin_type', 'hair_color',
+#                      'product_name_x', 'brand_name_x', 'price_usd_x',
+#                      'loves_count', 'reviews',
+#                      'ingredients', 'highlights', 'primary_category',
+#                      'secondary_category']]
+#     sephora_df = seph_df.dropna()
+#     sephora_df = sephora_df.sample(n=100000, random_state=0)
+#     sephora_df.reset_index(drop=True, inplace=True)
+#     return sephora_df
 
     # with open("data.pickle", "wb") as fw:
     #     pickle.dump(sephora_df, fw)
 
-    return sephora_df
+    # return sephora_df
 #
 # @st.cache_data
 def pickle_load():
