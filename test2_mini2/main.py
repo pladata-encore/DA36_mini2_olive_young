@@ -12,7 +12,12 @@ from intro import *
 import os
 
 import functions as fun
-
+from sklearn.feature_extraction.text import CountVectorizer
+from sklearn.metrics.pairwise import cosine_similarity
+from sklearn.model_selection import train_test_split
+from catboost import Pool
+from catboost import CatBoostRegressor
+import pickle
 # fun.data_load()
 
 fun.pickle_load()
