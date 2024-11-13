@@ -311,7 +311,7 @@ def regression_recommend(sephora_df, product_name_x, brand_name, secondary_categ
 
     # with open("cb_reg.pickle", "wb") as fw:
     #     pickle.dump(cb_reg, fw)
-    with open("./data/cb_reg.pickle", "rb") as fr:
+    with open("data/cb_reg.pickle", "rb") as fr:
         cb_reg = pickle.load(fr)
 
 
