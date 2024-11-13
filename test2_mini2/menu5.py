@@ -1,10 +1,8 @@
-from operator import index
-
 import streamlit as st
 import functions as fun
 
 from PIL import Image
-import pickle
+
 
 
 # df = fun.load_data()
